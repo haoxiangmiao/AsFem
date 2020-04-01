@@ -1,0 +1,580 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 4.2.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/AsFem/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/AsFem/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/AsFem/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/AsFem/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/AsFem/css/main.css">
+
+
+<link rel="stylesheet" href="/AsFem/lib/font-awesome/css/font-awesome.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"yangbai90.github.io","root":"/AsFem/","scheme":"Muse","version":"7.7.2","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
+  </script>
+
+  <meta name="description" content="Before we startCurrently, some available demos can be found here: https:&#x2F;&#x2F;space.bilibili.com&#x2F;100272198&#x2F;channel&#x2F;detail?cid&#x3D;90241 Write a simple input file:structure of the block in your input file shou">
+<meta property="og:type" content="website">
+<meta property="og:title" content="AsFem manual">
+<meta property="og:url" content="https://yangbai90.github.io/AsFem/documents/index.html">
+<meta property="og:site_name" content="AsFem">
+<meta property="og:description" content="Before we startCurrently, some available demos can be found here: https:&#x2F;&#x2F;space.bilibili.com&#x2F;100272198&#x2F;channel&#x2F;detail?cid&#x3D;90241 Write a simple input file:structure of the block in your input file shou">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2020-03-31T18:22:15.000Z">
+<meta property="article:modified_time" content="2020-04-01T08:23:34.605Z">
+<meta property="article:author" content="Yang Bai">
+<meta property="article:tag" content="document">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="https://yangbai90.github.io/AsFem/documents/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : false,
+    lang   : 'en'
+  };
+</script>
+
+  <title>AsFem manual | AsFem
+</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/AsFem/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">AsFem</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">A Simple Finite Element Method program</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/AsFem/" rel="section"><i class="fa fa-fw fa-home"></i>Home</a>
+
+  </li>
+        <li class="menu-item menu-item-document">
+
+    <a href="/AsFem/documents/" rel="section"><i class="fa fa-fw fa-book"></i>document</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/AsFem/about/" rel="section"><i class="fa fa-fw fa-user"></i>About</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/AsFem/tags/" rel="section"><i class="fa fa-fw fa-tags"></i>Tags</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/AsFem/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>Archives</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>Search
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="Searching..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+  
+  
+
+          <div class="content page posts-expand">
+            
+
+    
+    
+    
+    <div class="post-block" lang="en">
+      <header class="post-header">
+
+<h1 class="post-title" itemprop="name headline">AsFem manual
+</h1>
+
+<div class="post-meta">
+  
+
+</div>
+
+</header>
+
+      
+      
+      
+      <div class="post-body">
+          <h1 id="Before-we-start"><a href="#Before-we-start" class="headerlink" title="Before we start"></a>Before we start</h1><p>Currently, some available demos can be found here:</p>
+<p><a href="https://space.bilibili.com/100272198/channel/detail?cid=90241" target="_blank" rel="noopener">https://space.bilibili.com/100272198/channel/detail?cid=90241</a></p>
+<h2 id="Write-a-simple-input-file"><a href="#Write-a-simple-input-file" class="headerlink" title="Write a simple input file:"></a>Write a simple input file:</h2><p>structure of the block in your input file should look like:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">[block_name]</span><br><span class="line">type&#x3D;...</span><br><span class="line">option1&#x3D;...</span><br><span class="line">option2&#x3D;...</span><br><span class="line">[end]</span><br></pre></td></tr></table></figure><br>Here we use the [blockname]/[end] bracket pair to set the properties we want. Thus each block pair must end up with an ‘[end]’. Remember, even there are sub-blocks inside one big block, each block itself still must end up with an ‘[end]’. Otherwise, your input file will complain about errors to you!</p>
+<p>For one minimal input file, you need:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">[mesh]</span><br><span class="line">...</span><br><span class="line">[end]</span><br></pre></td></tr></table></figure></p>
+<p>and the name or name list of the defined degrees of freedom (DoFs), which will be displayed in the Paraview when you open the result file(vtu file). Besides, the name of related DoFs is required when you want to apply the boundary condition.<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">[dofs]</span><br><span class="line">...</span><br><span class="line">[end]</span><br></pre></td></tr></table></figure></p>
+<p>and the element or the module you want to use:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">[elmts]</span><br><span class="line">...</span><br><span class="line">[end]</span><br></pre></td></tr></table></figure></p>
+<p>and the information for the analysis(we call it the [job] block)<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">[job]</span><br><span class="line">...</span><br><span class="line">[end]</span><br></pre></td></tr></table></figure></p>
+<p>In summary, you need at least:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">[mesh]</span><br><span class="line">...</span><br><span class="line">[end]</span><br><span class="line">[dofs]</span><br><span class="line">...</span><br><span class="line">[end]</span><br><span class="line">[elmts]</span><br><span class="line">...</span><br><span class="line">[end]</span><br><span class="line">[job]</span><br><span class="line">...</span><br><span class="line">[end]</span><br></pre></td></tr></table></figure></p>
+<!--###########################################################################-->
+<!--For the first chapter-->
+<!--###########################################################################-->
+<h1 id="Installation"><a href="#Installation" class="headerlink" title="Installation"></a>Installation</h1><h2 id="Windows"><a href="#Windows" class="headerlink" title="Windows"></a>Windows</h2><p>For windows users, it is recommended to download the executable file from here <a href="https://github.com/yangbai90/AsFem/releases" target="_blank" rel="noopener">AsFem-Win</a></p>
+<p>If someone really needs to compile the source code by themselves, one can do the following steps:</p>
+<h3 id="step-1"><a href="#step-1" class="headerlink" title="step-1"></a>step-1</h3><p>Firstly, you need to install the PETSc in your windows system. In order to do this, you need to install <a href="http://www.cygwin.com/" target="_blank" rel="noopener">Cygwin</a>. Download it and double click on it, it will ask you to select the FTP server(please choose the one close to you to speed up the download rate).</p>
+<p>After that, you can search the GCC, g++, python, make components (GCC/g++, make, python are required to install PETSc). After the necessary components are selected, Cygwin will download it and install them into the folder you selected. If everything is fine, you should find the ‘mintty.exe’ file in your Cygwin-install-path/bin folder.</p>
+<h3 id="step-2"><a href="#step-2" class="headerlink" title="step-2"></a>step-2</h3><p>In order to let the Cygwin compiler knows that we have the msvc c/c++ compiler, please open your start-&gt;visualstudo2019-&gt;x86_64-native-compiler (whatever the name it is, just a terminal command-prompt, open it!). After the terminal is open, cd into the ‘mintty.exe’ file’s folder and run<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;usr&#x2F;bin&#x2F;bash --login</span><br></pre></td></tr></table></figure><br>it will open a new terminal (named by Cygwin maybe), now both the win32fe compiler and GCC compiler are ready for the next step. Remember, in the following steps, you should do all the compilation stuff in this new terminal!!!</p>
+<h3 id="step-3"><a href="#step-3" class="headerlink" title="step-3"></a>step-3</h3><p>Now we can do the installation for PETSc in windows since your new terminal is a Linux-type terminal, you can download the PETSc via:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">curl -L -O http:&#x2F;&#x2F;ftp.mcs.anl.gov&#x2F;pub&#x2F;petsc&#x2F;release-snapshots&#x2F;petsc-3.11.4.tar.gz</span><br></pre></td></tr></table></figure><br>or download PETSc from your favorite browser, and choose the version you like from here: <a href="https://www.mcs.anl.gov/petsc/mirror/release-snapshots/" target="_blank" rel="noopener">https://www.mcs.anl.gov/petsc/mirror/release-snapshots/</a></p>
+<p>Then you can unzip it via ‘tar -xf petsc.tar.gz’ or just right-click on it and unzip it. After that, cd into the petsc folder from your new terminal, and run the configuration file like below:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">.&#x2F;configure --with-cc&#x3D;&#39;win32fe cl&#39; --with-fc&#x3D;0 --with-cxx&#x3D;&#39;win32fe cl&#39; --with-mpi&#x3D;0 \</span><br><span class="line">--download-f2cblaslapack \</span><br><span class="line">CFLAGS&#x3D;&#39;-fPIC -fopenmp -O3 -march&#x3D;native&#39; \</span><br><span class="line">CXXFLAGS&#x3D;&#39;-fPIC -fopenmp -O3 -march&#x3D;native&#39; \</span><br><span class="line">FFLAGS&#x3D;&#39;-fPIC -fopenmp -O3 -march&#x3D;native&#39; \</span><br><span class="line">FCFLAGS&#x3D;&#39;-fPIC -fopenmp &#39; \</span><br><span class="line">F90FLAGS&#x3D;&#39;-fPIC -fopenmp &#39; \</span><br><span class="line">F77FLAGS&#x3D;&#39;-fPIC -fopenmp &#39;</span><br></pre></td></tr></table></figure><br>after the configuration is done, it will ask you to do several ‘make xxxxxx’ steps, then you just need to copy the ‘make xxx’ command from the terminal and copy it and run it.<br>After several steps (3~4, normally it is 1) ‘make xxxx’ 2) ‘make xxx install’ 3) ‘make xxxx test’), your PETSc should be ready. By default, the petsc is installed in the same folder as your petsc source code, but it may have a different name, i.e. win-opt-arch, something like that.</p>
+<h3 id="step-4"><a href="#step-4" class="headerlink" title="step-4"></a>step-4</h3><p>Now you can compile AsFem after you download the source code, you need to edit the CMakeLists.txt file in AsFem folder, please choose the windows release configuration in CMakeLists.txt file, and make sure the path to your PETSc and Eigen is correct (in windows, the path is ‘C:\Program\xxx’, however, it should be modified as ‘C:/Program/XXX’, otherwise it can not be recognized). Another important thing is, in Linux the library file is named as ‘xxx.so’. However, it is different in windows, where you should give ‘petsc.lib’ or whatever the name you see in your petsc’s lib folder.</p>
+<p>After your CMakeLists.txt file is ready, open your VisualStudio2019 and open the AsFem folder, then compile it.<br>In order to run asfem, you need to put the petsc.dll file together with asfem. </p>
+<h2 id="Linux"><a href="#Linux" class="headerlink" title="Linux"></a>Linux</h2><p>For Linux users, it is much simpler. All you need is the g++ compiler and one working mpi compiler. Then you can do:</p>
+<h3 id="step-1-1"><a href="#step-1-1" class="headerlink" title="step-1"></a>step-1</h3><p>install the PETSc</p>
+<h3 id="step-2-1"><a href="#step-2-1" class="headerlink" title="step-2"></a>step-2</h3><p>download the source code:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git clone https:&#x2F;&#x2F;github.com&#x2F;yangbai90&#x2F;AsFem.git</span><br></pre></td></tr></table></figure><br>then go to the source code folder and edit the CMakeLists.txt file, change the path of PETSc and MPI to your own one. Then you can run:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cmake CMakeLists.txt &amp;&amp; make -j8</span><br></pre></td></tr></table></figure><br>after the compilation is finished, the executable file ‘asfem’ should be found under the bin folder.</p>
+<!--###########################################################################-->
+<!--For the second chapter-->
+<!--###########################################################################-->
+<h1 id="Mesh-generation"><a href="#Mesh-generation" class="headerlink" title="Mesh generation"></a>Mesh generation</h1><p>For the mesh generation, the [mesh] block is required.<br>For example, if one wants to generate the 1d Lagrange mesh, you can use:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">[mesh]</span><br><span class="line">  type&#x3D;asfem</span><br><span class="line">  dim&#x3D;1</span><br><span class="line">  xmin&#x3D;0.0</span><br><span class="line">  xmax&#x3D;1.0</span><br><span class="line">  nx&#x3D;10</span><br><span class="line">  meshtype&#x3D;edge2</span><br><span class="line">[end]</span><br></pre></td></tr></table></figure><br>if one wants to save the generated mesh, then the option ‘savemesh=true’ is required:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">[mesh]</span><br><span class="line">  type&#x3D;asfem</span><br><span class="line">  dim&#x3D;1</span><br><span class="line">  xmin&#x3D;0.0</span><br><span class="line">  xmax&#x3D;1.0</span><br><span class="line">  nx&#x3D;10</span><br><span class="line">  meshtype&#x3D;edge2</span><br><span class="line">  savemesh&#x3D;true</span><br><span class="line">[end]</span><br></pre></td></tr></table></figure><br>The mesh will be saved as a <em>.vtu</em> file, which should have the name: your_input_file_name+’_mesh.vtu’(<em>.i</em> is removed from your input file name). For example, if your input file is: <em>test.i</em>, then the mesh file name is: <em>test_mesh.vtu</em>.</p>
+<p>Additionally, AsFem will also print this message in your console:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">**************************************************************</span><br><span class="line">*** Start to read input file ...                           ***</span><br><span class="line">***   start to crate mesh ...                              ***</span><br><span class="line">***     save mesh to                   hex20m1_mesh.vtu    ***</span><br><span class="line">***   mesh generation finished !                           ***</span><br></pre></td></tr></table></figure></p>
+<p>Moreover, if one wants to print out the mesh information in the terminal, one can use the ‘printmesh=true’ option. For example, if we want to print the information of a 1D edge3 type Lagrange mesh, we can use:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">[mesh]</span><br><span class="line">  type&#x3D;asfem</span><br><span class="line">  dim&#x3D;1</span><br><span class="line">  xmin&#x3D;0.0</span><br><span class="line">  xmax&#x3D;1.0</span><br><span class="line">  nx&#x3D;5</span><br><span class="line">  meshtype&#x3D;edge4</span><br><span class="line">  savemesh&#x3D;false</span><br><span class="line">  printmesh&#x3D;true</span><br><span class="line">[end]</span><br></pre></td></tr></table></figure><br>then the output should look like:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">***-------------------------------------------------------------------***</span><br><span class="line">*** Mesh information summary:                                         ***</span><br><span class="line">***  Nodes&#x3D;       16, Elmts&#x3D;        7, NodesPerBulkElmt&#x3D;  4           ***</span><br><span class="line">***  Max dim&#x3D; 1, Min dim&#x3D; 0, PhyGroup&#x3D;    3, Meshtype&#x3D; edge4, Order&#x3D;3 ***</span><br><span class="line">***  Physical id                    Phsical Name             Elmts    ***</span><br><span class="line">***        1                                left                 1    ***</span><br><span class="line">***        2                               right                 1    ***</span><br><span class="line">***        3                           alldomain                 5    ***</span><br><span class="line">***-------------------------------------------------------------------***</span><br></pre></td></tr></table></figure><br>if one wants to print out the details of the mesh, then ‘printmesh=dep’ option should be used. Consequently, the output should look like:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line">***-------------------------------------------------------------------***</span><br><span class="line">*** Mesh information summary:                                         ***</span><br><span class="line">***  Nodes&#x3D;       16, Elmts&#x3D;        7, NodesPerBulkElmt&#x3D;  4           ***</span><br><span class="line">***  Max dim&#x3D; 1, Min dim&#x3D; 0, PhyGroup&#x3D;    3, Meshtype&#x3D; edge4, Order&#x3D;3 ***</span><br><span class="line">***  Physical id                    Phsical Name             Elmts    ***</span><br><span class="line">***        1                                left                 1    ***</span><br><span class="line">***        2                               right                 1    ***</span><br><span class="line">***        3                           alldomain                 5    ***</span><br><span class="line">***  Physical group information (ID and element ID)                   ***</span><br><span class="line">***  phyname&#x3D;                     left, element id&#x3D;        1          ***</span><br><span class="line">***  phyname&#x3D;                    right, element id&#x3D;        2          ***</span><br><span class="line">***  phyname&#x3D;                alldomain, element id&#x3D;        3          ***</span><br><span class="line">***  phyname&#x3D;                alldomain, element id&#x3D;        4          ***</span><br><span class="line">***  phyname&#x3D;                alldomain, element id&#x3D;        5          ***</span><br><span class="line">***  phyname&#x3D;                alldomain, element id&#x3D;        6          ***</span><br><span class="line">***  phyname&#x3D;                alldomain, element id&#x3D;        7          ***</span><br><span class="line">***  Element connectivity information(element id: node index):        ***</span><br><span class="line">***  elmt id&#x3D;        1:       1                                       ***</span><br><span class="line">***  elmt id&#x3D;        2:      16                                       ***</span><br><span class="line">***  elmt id&#x3D;        3:       1        2        3        4            ***</span><br><span class="line">***  elmt id&#x3D;        4:       4        5        6        7            ***</span><br><span class="line">***  elmt id&#x3D;        5:       7        8        9       10            ***</span><br><span class="line">***  elmt id&#x3D;        6:      10       11       12       13            ***</span><br><span class="line">***  elmt id&#x3D;        7:      13       14       15       16            ***</span><br><span class="line">***  Node coornidates (node id, x, y, z and weight)                   ***</span><br><span class="line">***          1:   0.0000e+00,   0.0000e+00,   0.0000e+00,   1.000e+00 ***</span><br><span class="line">***          2:   6.6667e-02,   0.0000e+00,   0.0000e+00,   1.000e+00 ***</span><br><span class="line">***          3:   1.3333e-01,   0.0000e+00,   0.0000e+00,   1.000e+00 ***</span><br><span class="line">***          4:   2.0000e-01,   0.0000e+00,   0.0000e+00,   1.000e+00 ***</span><br><span class="line">***          5:   2.6667e-01,   0.0000e+00,   0.0000e+00,   1.000e+00 ***</span><br><span class="line">***          6:   3.3333e-01,   0.0000e+00,   0.0000e+00,   1.000e+00 ***</span><br><span class="line">***          7:   4.0000e-01,   0.0000e+00,   0.0000e+00,   1.000e+00 ***</span><br><span class="line">***          8:   4.6667e-01,   0.0000e+00,   0.0000e+00,   1.000e+00 ***</span><br><span class="line">***          9:   5.3333e-01,   0.0000e+00,   0.0000e+00,   1.000e+00 ***</span><br><span class="line">***         10:   6.0000e-01,   0.0000e+00,   0.0000e+00,   1.000e+00 ***</span><br><span class="line">***         11:   6.6667e-01,   0.0000e+00,   0.0000e+00,   1.000e+00 ***</span><br><span class="line">***         12:   7.3333e-01,   0.0000e+00,   0.0000e+00,   1.000e+00 ***</span><br><span class="line">***         13:   8.0000e-01,   0.0000e+00,   0.0000e+00,   1.000e+00 ***</span><br><span class="line">***         14:   8.6667e-01,   0.0000e+00,   0.0000e+00,   1.000e+00 ***</span><br><span class="line">***         15:   9.3333e-01,   0.0000e+00,   0.0000e+00,   1.000e+00 ***</span><br><span class="line">***         16:   1.0000e+00,   0.0000e+00,   0.0000e+00,   1.000e+00 ***</span><br><span class="line">***-------------------------------------------------------------------***</span><br></pre></td></tr></table></figure><br>Since <strong>printmesh=dep</strong> option will print out all the information, includes the nodal coordinates and elemental connectivity, it is suggested <strong>not</strong> use this option in your [mesh] block. If one wants to check the mesh, ‘savemesh=true’ is already good enough!</p>
+<p>Similarly, for 2D and 3D cases, one can use:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">[mesh]</span><br><span class="line">  type&#x3D;asfem</span><br><span class="line">  dim&#x3D;2</span><br><span class="line">  xmin&#x3D;0.0</span><br><span class="line">  xmax&#x3D;1.0</span><br><span class="line">  ymin&#x3D;0.0</span><br><span class="line">  ymax&#x3D;1.0</span><br><span class="line">  nx&#x3D;10</span><br><span class="line">  ny&#x3D;10</span><br><span class="line">  meshtype&#x3D;quad4</span><br><span class="line">[end]</span><br></pre></td></tr></table></figure><br>and<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">[mesh]</span><br><span class="line">  type&#x3D;asfem</span><br><span class="line">  dim&#x3D;3</span><br><span class="line">  xmin&#x3D;0.0</span><br><span class="line">  xmax&#x3D;1.0</span><br><span class="line">  ymin&#x3D;0.0</span><br><span class="line">  ymax&#x3D;1.0</span><br><span class="line">  zmin&#x3D;0.0</span><br><span class="line">  zmax&#x3D;1.0</span><br><span class="line">  nx&#x3D;10</span><br><span class="line">  ny&#x3D;10</span><br><span class="line">  nz&#x3D;10</span><br><span class="line">  meshtype&#x3D;hex8</span><br><span class="line">[end]</span><br></pre></td></tr></table></figure><br>Or, one can also use:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">[mesh]</span><br><span class="line">  type&#x3D;asfem</span><br><span class="line">  dim&#x3D;3</span><br><span class="line">  nx&#x3D;10</span><br><span class="line">  ny&#x3D;10</span><br><span class="line">  nz&#x3D;10</span><br><span class="line">  meshtype&#x3D;hex8</span><br><span class="line">[end]</span><br></pre></td></tr></table></figure><br>then the unit([0,1] in 1D, [0,1]x[0,1] in 2D, [0,1]x[0,1]x[0,1] in 3D) domain will be used by default.</p>
+<p>Currently, AsFem supports the following kinds of built-in mesh:</p>
+<ul>
+<li><p>1D—&gt; edge2, edge3, edge4</p>
+</li>
+<li><p>2D—&gt; quad4, quad8, quad9</p>
+</li>
+<li><p>3D—&gt; hex8, hex20, hex27</p>
+</li>
+</ul>
+<!--###########################################################################-->
+<!--For Degrees of freedom (DoFs)-->
+<!--###########################################################################-->
+<h1 id="Degrees-of-freedom-DoFs"><a href="#Degrees-of-freedom-DoFs" class="headerlink" title="Degrees of freedom (DoFs)"></a>Degrees of freedom (DoFs)</h1><p>In AsFem, the name of DoFs is required before the simulation can start. Once the name of DoFs is given, it is extremely easy to apply the boundary condition and also define the elements we want to use.<br>The [dofs] block is very simple, the complete block should look like:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">[dofs]</span><br><span class="line">name&#x3D;ux uy uz</span><br><span class="line">[end]</span><br></pre></td></tr></table></figure><br>this block tells AsFem that, we defined 3 DoFs, their names are: ux(the first one), uy(the second one), uz(the third one). Thus each node of our mesh will have 3 DoFs. </p>
+<p>By the way, when the result file is written to a VTU file, the related result will be associated with the name you defined. Thus it is very convenient to do the postprocessing.</p>
+<!--###########################################################################-->
+<!--For Elements-->
+<!--###########################################################################-->
+<h1 id="Elements-uel"><a href="#Elements-uel" class="headerlink" title="Elements(uel)"></a>Elements(uel)</h1><p>The available elements in AsFem are implemented as the user-defined element (uel) way. Currently, it supports</p>
+<ul>
+<li>[X] Poisson Equation (type=poisson)</li>
+<li>[x] Solid Mechanics (2D and 3D) (type=mechanics)</li>
+<li>[x] Fick Diffusion (type=diffusion)</li>
+<li>[x] Wave Propagation (type=wave)</li>
+<li>[x] Solid Mechanics (2D and 3D) (type=mechanics)</li>
+<li>[x] Cahn Hilliard diffusion (type=cahnhilliard)</li>
+<li>[x] Mechanically Coupled Thermal Analysis (type=thermalmechanics)</li>
+<li>[ ] Phase Field Fracture (under developing, type=linearelasticphasefieldfracture)</li>
+</ul>
+<p>The related block in your input file should look like:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">[elmts]</span><br><span class="line">  [your_sub_block_name]</span><br><span class="line">    type&#x3D;your_element_name</span><br><span class="line">    dofs&#x3D;ux uy</span><br><span class="line">    mate&#x3D;name_of_your_material  &#x2F;&#x2F; this can be ignored</span><br><span class="line">    domain&#x3D;alldomain            &#x2F;&#x2F; domain-id, can be ignored</span><br><span class="line">  [end]</span><br><span class="line">[end]</span><br></pre></td></tr></table></figure><br>For example, if we want to the linear elastic analysis, one can use:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">[elmts]</span><br><span class="line">  [solids]</span><br><span class="line">    type&#x3D;mechanics</span><br><span class="line">    dofs&#x3D;ux uy</span><br><span class="line">    mate&#x3D;elastic</span><br><span class="line">    domain&#x3D;alldomain</span><br><span class="line">  [end]</span><br><span class="line">[end]</span><br></pre></td></tr></table></figure><br>then the related material block can be defined as following:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">[mates]</span><br><span class="line">  [elastic]</span><br><span class="line">    type&#x3D;linearelastic</span><br><span class="line">    params&#x3D;1.0e5 0.25</span><br><span class="line">    &#x2F;&#x2F; params&#x3D; E nu(Youngs modulus and poisson ratio)</span><br><span class="line">  [end]</span><br><span class="line">[end]</span><br></pre></td></tr></table></figure><br>where, ‘type=’ should be given firstly, and the type name should be the buil-in type name or user defined one, i.e. user1, user2… </p>
+<p>Once the type is given, the ‘dofs=’ should be list, otherwise, nobody knows what you want to do. Besides, if one wants to define the material, then ‘mate=mate_block_name’ should be given. </p>
+<p>Remember, the ‘mate=’ is given by <strong>the name of the material block name</strong>, <em>not the material type name in [mates] block</em>.</p>
+<p>In [elmts] block, the domain name and material name can be ignored, however, if one wants to use a different material or your own material model, then a [mates] block is required to define the material.</p>
+<!--###########################################################################-->
+<!--For Materials(umat)-->
+<!--###########################################################################-->
+<h1 id="Materials-umat"><a href="#Materials-umat" class="headerlink" title="Materials(umat)"></a>Materials(umat)</h1><p>It is general and also convenient to has an interface to allow users to define their own material model, i.e. the constitutive law for solid mechanics or the free energies for phase-field simulation, hereby, the [mates] block is introduced in AsFem.</p>
+<p>The structure of the [mates] block looks like:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">[mates]</span><br><span class="line">  [mate1]</span><br><span class="line">    type&#x3D;mate_name1</span><br><span class="line">    params&#x3D;val1 val2 val3</span><br><span class="line">  [end]</span><br><span class="line">  [mate2]</span><br><span class="line">    type&#x3D;mate_name2</span><br><span class="line">    params&#x3D;x1 y1 z1</span><br><span class="line">  [end]</span><br><span class="line">[end]</span><br></pre></td></tr></table></figure><br>where the user can define multiple sub-blocks ([mate1],[mate2])inside the [mates]/[end] block pair, the <strong>sub block name should be different</strong>, otherwise AsFem will complain about the duplication. The ‘type=’ indicates the material you want to use, while ‘params=’ allows the user to define the parameters they want to use for this material.</p>
+<p>Currently, AsFem supports:</p>
+<ul>
+<li>[ ] Constant Poisson Material (type=constpoisson)</li>
+<li>[ ] Nonlinear Poisson Material (type=nlpoisson)</li>
+<li>[ ] Tensor Poisson Material (type=tensorpoisson)</li>
+<li>[ ] Constant Diffusion Material (type=constdiffusion)</li>
+<li>[ ] Nonlinear Diffusion Material (type=nldiffusion)</li>
+<li>[ ] Tensor Diffusion Material (type=tensordiffusion)</li>
+<li>[ ] Constant Wave Propagation Material (type=constwave)</li>
+<li>[ ] Linear Elastic Material (type=linearelastic)</li>
+<li>[ ] Saint Venant Elastic Material (type=saintvenant)</li>
+<li>[ ] Neo-Hookean Elastic Material (type=neohookean)</li>
+<li>[ ] Mooney-Rivlin Elastic Material (type=mooneyrivlin)</li>
+<li>[ ] Wave Propagation Material (type=constwave)</li>
+<li>[ ] Thermal Mechanics Coupling Material (type=thermelastic)</li>
+<li>[ ] Linear Elastic Phase Field Fracture Material (type=lpffracture)</li>
+<li>[ ] Linear Elastic Cahn-Hilliard Diffusion Material (type=elasticch)</li>
+<li>[ ] User Defined Material (UMAT,currently AsFem suppor 20 umat) (type=user1[,user2,user3,…,user20])</li>
+</ul>
+<p>In order to reduce the difficulty of coding, AsFem introduces the tensor calculation, which is quite convenient for tensor-based constitutive law and other tensor calculation.</p>
+<!--###########################################################################-->
+<!--For Boundary conditions(BC)-->
+<!--###########################################################################-->
+<h1 id="Boundary-conditions-BCs"><a href="#Boundary-conditions-BCs" class="headerlink" title="Boundary conditions(BCs)"></a>Boundary conditions(BCs)</h1><p>Boundary conditions are quite important if someone has to have a numerical solution. For most of the PDEs, the boundary condition is the key point to let you have the correct solution. In this chapter, the boundary condition system of AsFem will be introduced.</p>
+<p>Normally, there are three types of boundary conditions: 1) Dirichlet boundary conditions, where the degree of freedom (Dof) equals to some specific values at some specific boundary, namely <script type="math/tex">u_{i}=u_{0}</script> . 2) Neumann boundary conditions, where the gradient of the degree of freedom equals to some certain values at some specific boundary, namely $\nabla u\cdot\vec{n}=g_{0}$ . 3) Robin boundary conditions, where the combination of the previous two types is introduced, namely $\nabla u\cdot\vec{n}=f(u)$ , where $f(u)$ is the function of our DoF, it could be linear or nonlinear.</p>
+<p>Thus, one can apply the different boundary conditions in AsFem as follow:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">[bcs]</span><br><span class="line">  [mybc1]</span><br><span class="line">    type&#x3D;dirichlet[neumann]</span><br><span class="line">    dof&#x3D;ux</span><br><span class="line">    boundary&#x3D;bottom</span><br><span class="line">    value&#x3D;0.0</span><br><span class="line">  [end]</span><br><span class="line">[end]</span><br></pre></td></tr></table></figure><br>where the [bcs]/[end] pair denotes the boundary condition block, inside this master block, one can define several sub-blocks for different boundary conditions. The basic information for a sub-block looks like:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">[mybc1]</span><br><span class="line">  type&#x3D;dirichlet[neumann,user1,user2,...]</span><br><span class="line">  dof&#x3D;ux</span><br><span class="line">  boundary&#x3D;bottom</span><br><span class="line">  value&#x3D;0.0</span><br><span class="line">[end]</span><br></pre></td></tr></table></figure><br>where ‘type=’ defines which type of boundary condition one wants to use, currently dirichlet, neumann, user1~user10 is supported. </p>
+<p>For user1-user10, they are designed to allow users to do any kind of boundary conditions they want, namely the user-defined boundary condition, short for ubc. Thus, if one wants to apply a robin boundary condition, then one can use one of the user1-user10 cpp file in src/BCs folder to implement your own BC.</p>
+<p>The ‘dof=’ defines the name of the dof for the applied boundary condition. <strong>The dof name should be one of the name in [dofs]/[end] block</strong>. </p>
+<p>While ‘boundary=’ represents the name of the boundaries we want to apply, yes, the <strong>boundaries</strong> not the boundary. It means, if you want to set ‘u=1.0’ at both the left, right, bottom and top edges of a rectangle domain, then one can use ‘boundary=left right bottom top’. </p>
+<p>The last one, ‘value=’ is the boundary value one wants to apply.</p>
+<h2 id="Dynamic-loading"><a href="#Dynamic-loading" class="headerlink" title="Dynamic loading"></a>Dynamic loading</h2><p>So, what should I do if I want to apply a dynamic displacement loading to my cubic box? The answer is, <strong>‘t’</strong>. Yes, just put the time-dependent expression, i.e. 0.5*t in your ‘value=’, AsFem will treat it as a time-dependent boundary condition. For sure, for this case, you definitely need a transient analysis, not a static one!</p>
+<p>For example, the following lines defined a dynamic displacement loading (ux) on the top edge of a rectangle domain, but fixed other edges:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">[bcs]</span><br><span class="line">  [fixUx]</span><br><span class="line">    type&#x3D;dirichlet</span><br><span class="line">    dof&#x3D;ux</span><br><span class="line">    boundary&#x3D;bottom</span><br><span class="line">    value&#x3D;0.0</span><br><span class="line">  [end]</span><br><span class="line">  [fixUy]</span><br><span class="line">    type&#x3D;dirichlet</span><br><span class="line">    dof&#x3D;uy</span><br><span class="line">    boundary&#x3D;bottom left right top</span><br><span class="line">    value&#x3D;0.0</span><br><span class="line">  [end]</span><br><span class="line">  [loadUx]</span><br><span class="line">    type&#x3D;dirichlet</span><br><span class="line">    dof&#x3D;ux</span><br><span class="line">    value&#x3D;1.0*t</span><br><span class="line">    boundary&#x3D;top</span><br><span class="line">  [end]</span><br><span class="line">[end]</span><br></pre></td></tr></table></figure></p>
+<!--###########################################################################-->
+<!--For Initial conditions (ICs)-->
+<!--###########################################################################-->
+<h1 id="Initial-conditions-ICs"><a href="#Initial-conditions-ICs" class="headerlink" title="Initial conditions (ICs)"></a>Initial conditions (ICs)</h1><p>For time-dependent problems, the initial condition (IC) is very important to have a good result. Similar to the boundary conditions, the initial conditions in AsFem is applied by the [ics]/[end] block, which looks like:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">[ics]</span><br><span class="line">  [myic1]</span><br><span class="line">    type&#x3D;const</span><br><span class="line">    dof&#x3D;d</span><br><span class="line">    params&#x3D;0.0</span><br><span class="line">  [end]</span><br><span class="line">[end]</span><br></pre></td></tr></table></figure><br>where the sub-block inside the [ics]/[end] master pair is used to define multiple initial conditions. The basic information of a initial condition is defined as:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">[myic1]</span><br><span class="line">  type&#x3D;const</span><br><span class="line">  dof&#x3D;d</span><br><span class="line">  params&#x3D;0.0</span><br><span class="line">  domain&#x3D;alldomain</span><br><span class="line">[end]</span><br></pre></td></tr></table></figure><br>where ‘type=’ denotes which type of initial condition you want to use. Currently, AsFem supports ‘const, random, circle, rectangle, user1~user10’ initial conditions.</p>
+<p>The ‘dof=dof_name’ defines the dof we want to apply the IC, while ‘params=’ is the parameter list for this IC.</p>
+<p>The ‘domain=’ denotes, which domain we want the current IC to be applied. <strong>Once ‘domain=’ is ignored, all the domain will be used !!!</strong></p>
+<p>For example, if we want to let c has a randomly distribution in [0.6,0.66], while mu to be the constant (0.0), we can use:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">[ics]</span><br><span class="line">  [myc]</span><br><span class="line">    type&#x3D;random</span><br><span class="line">    dof&#x3D;c</span><br><span class="line">    params&#x3D;0.6 0.66</span><br><span class="line">  [end]</span><br><span class="line">  [mymu]</span><br><span class="line">    type&#x3D;const</span><br><span class="line">    dof&#x3D;mu</span><br><span class="line">    params&#x3D;0.0</span><br><span class="line">  [end]</span><br><span class="line">[end]</span><br></pre></td></tr></table></figure></p>
+<!--###########################################################################-->
+<!--For Examples -->
+<!--###########################################################################-->
+<p>That’s all, enjoy it!</p>
+
+      </div>
+      
+      
+      
+    </div>
+    
+
+    
+    
+    
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Before-we-start"><span class="nav-number">1.</span> <span class="nav-text">Before we start</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Write-a-simple-input-file"><span class="nav-number">1.1.</span> <span class="nav-text">Write a simple input file:</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Installation"><span class="nav-number">2.</span> <span class="nav-text">Installation</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Windows"><span class="nav-number">2.1.</span> <span class="nav-text">Windows</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#step-1"><span class="nav-number">2.1.1.</span> <span class="nav-text">step-1</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#step-2"><span class="nav-number">2.1.2.</span> <span class="nav-text">step-2</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#step-3"><span class="nav-number">2.1.3.</span> <span class="nav-text">step-3</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#step-4"><span class="nav-number">2.1.4.</span> <span class="nav-text">step-4</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Linux"><span class="nav-number">2.2.</span> <span class="nav-text">Linux</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#step-1-1"><span class="nav-number">2.2.1.</span> <span class="nav-text">step-1</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#step-2-1"><span class="nav-number">2.2.2.</span> <span class="nav-text">step-2</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Mesh-generation"><span class="nav-number">3.</span> <span class="nav-text">Mesh generation</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Degrees-of-freedom-DoFs"><span class="nav-number">4.</span> <span class="nav-text">Degrees of freedom (DoFs)</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Elements-uel"><span class="nav-number">5.</span> <span class="nav-text">Elements(uel)</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Materials-umat"><span class="nav-number">6.</span> <span class="nav-text">Materials(umat)</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Boundary-conditions-BCs"><span class="nav-number">7.</span> <span class="nav-text">Boundary conditions(BCs)</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Dynamic-loading"><span class="nav-number">7.1.</span> <span class="nav-text">Dynamic loading</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Initial-conditions-ICs"><span class="nav-number">8.</span> <span class="nav-text">Initial conditions (ICs)</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">Yang Bai</p>
+  <div class="site-description" itemprop="description">A simple finite element method program for phase-field modeling and multiphysics modeling</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/AsFem/archives/">
+        
+          <span class="site-state-item-count">3</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+        <span class="site-state-item-count">1</span>
+        <span class="site-state-item-name">categories</span>
+      </div>
+      <div class="site-state-item site-state-tags">
+        <span class="site-state-item-count">1</span>
+        <span class="site-state-item-name">tags</span>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/yangbai90" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;yangbai90" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:walkandthinker@gmail.com" title="E-Mail → mailto:walkandthinker@gmail.com" rel="noopener" target="_blank"><i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://space.bilibili.com/100272198/channel/detail?cid=90241" title="Bilibili → https:&#x2F;&#x2F;space.bilibili.com&#x2F;100272198&#x2F;channel&#x2F;detail?cid&#x3D;90241" rel="noopener" target="_blank"><i class="fa fa-fw fa-video"></i>Bilibili</a>
+      </span>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Yang Bai</span>
+</div>
+  <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://muse.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a>
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/AsFem/lib/anime.min.js"></script>
+  <script src="/AsFem/lib/velocity/velocity.min.js"></script>
+  <script src="/AsFem/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/AsFem/js/utils.js"></script>
+
+<script src="/AsFem/js/motion.js"></script>
+
+
+<script src="/AsFem/js/schemes/muse.js"></script>
+
+
+<script src="/AsFem/js/next-boot.js"></script>
+
+
+
+
+  
+  <script>
+    (function(){
+      var bp = document.createElement('script');
+      var curProtocol = window.location.protocol.split(':')[0];
+      bp.src = (curProtocol === 'https') ? 'https://zz.bdstatic.com/linksubmit/push.js' : 'http://push.zhanzhang.baidu.com/push.js';
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(bp, s);
+    })();
+  </script>
+
+
+
+
+  
+<script src="/AsFem/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+      
+
+<script>
+  if (typeof MathJax === 'undefined') {
+    window.MathJax = {
+      loader: {
+          load: ['[tex]/mhchem'],
+        source: {
+          '[tex]/amsCd': '[tex]/amscd',
+          '[tex]/AMScd': '[tex]/amscd'
+        }
+      },
+      tex: {
+        inlineMath: {'[+]': [['$', '$']]},
+          packages: {'[+]': ['mhchem']},
+        tags: 'ams'
+      },
+      options: {
+        renderActions: {
+          findScript: [10, doc => {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(node => {
+              const display = !!node.type.match(/; *mode=display/);
+              const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+              const text = document.createTextNode('');
+              node.parentNode.replaceChild(text, node);
+              math.start = {node: text, delim: '', n: 0};
+              math.end = {node: text, delim: '', n: 0};
+              doc.math.push(math);
+            });
+          }, '', false],
+          insertedScript: [200, () => {
+            document.querySelectorAll('mjx-container').forEach(node => {
+              let target = node.parentNode;
+              if (target.nodeName.toLowerCase() === 'li') {
+                target.parentNode.classList.add('has-jax');
+              }
+            });
+          }, '', false]
+        }
+      }
+    };
+    (function () {
+      var script = document.createElement('script');
+      script.src = '//cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js';
+      script.defer = true;
+      document.head.appendChild(script);
+    })();
+  } else {
+    MathJax.startup.document.state(0);
+    MathJax.texReset();
+    MathJax.typeset();
+  }
+</script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+
+    
+
+  
+
+</body>
+</html>
