@@ -29,9 +29,7 @@ include_directories("${Eigen}")
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wall -Wextra -Werror -O2 -fopenmp")
 ### for gcc 9, you must add this!!!
 #set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wno-error=deprecated-copy")
-### this will ignore all the warnings
-#set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wno-deprecated-copy -Wno-array-bounds")
-#set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wno-deprecated-copy")
+
 
 
 ###############################################
@@ -129,7 +127,7 @@ set(src ${src} src/InputSystem/ReadOutputBlock.cpp)
 #############################################################
 ### For Mesh class                                        ###
 #############################################################
-set(inc ${inc} include/Mesh/Mesh.h include/Mesh/MeshType.h)
+set(inc ${inc} include/Mesh/MeshBase.h include/Mesh/Mesh.h include/Mesh/MeshType.h)
 set(inc ${inc} include/Mesh/Nodes.h)
 set(src ${src} src/Mesh/Mesh.cpp src/Mesh/CreateMesh.cpp)
 set(src ${src} src/Mesh/Create1DMesh.cpp src/Mesh/Create2DMesh.cpp src/Mesh/Create3DMesh.cpp)
